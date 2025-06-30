@@ -1,15 +1,18 @@
 <!-- sections/projects.html -->
+<h3>Mes projects</h3>
 <div class="mouse-dragging">
-    <sl-carousel pagination mouse-dragging style="--scroll-hint: 10%;">
+    <sl-carousel pagination navigation slides-per-page="2" slides-per-move="1" style="--scroll-hint: 10%;--aspect-ratio: 3/2;">
         <sl-carousel-item>
             <sl-card class="card-image">
                 <img
                     slot="image"
                     src="../static/images/test.jpg"
                     alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
+                    style="width:100%;height:auto;cursor:pointer;"
+                    onclick="openFull(this)"
                 />
-                The sun shines on the mountains and trees.<br>
-                <a href="https://unsplash.com/photos/6VhPY27jdps" target="_blank">by Adam Kool on Unsplash</a>
+                DésoléGPT: Un bot discord qui réagit aux mots clefs et envoye des videos<br>
+                <a href="https://github.com/Farounaga/desolegpt" target="_blank">voir sur GitHub</a>
             </sl-card>
         </sl-carousel-item>
         <sl-carousel-item>
@@ -18,42 +21,24 @@
                     slot="image"
                     src="../static/images/test2.jpg"
                     alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
+                    style="width:100%;height:auto;cursor:pointer;"
+                    onclick="openFull(this)"
                 />
-                A waterfall in the middle of a forest.<br>
-                <a href="https://unsplash.com/photos/tmk0bwr6mJg" target="_blank">by Thomas Kelly on Unsplash</a>
+                Projet d'alternance: création des statistiques d'analyse de tickets<br>
+                <a href="https://github.com/Farounaga/tickets" target="_blank">voir sur GitHub</a>
             </sl-card>
         </sl-carousel-item>
         <sl-carousel-item>
             <sl-card class="card-image">
                 <img
                     slot="image"
-                    src="../static/images/test.jpg"
+                    src="../static/images/test3.jpg"
                     alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
+                    style="width:100%;height:auto;cursor:pointer;"
+                    onclick="openFull(this)"
                 />
-                The sun is setting over a lavender field.<br>
-                <a href="https://unsplash.com/photos/R5scocnOOdM" target="_blank">by Leonard Cotte on Unsplash</a>
-            </sl-card>
-        </sl-carousel-item>
-        <sl-carousel-item>
-            <sl-card class="card-image">
-                <img
-                    slot="image"
-                    src="../static/images/test2.jpg"
-                    alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
-                />
-                A field of grass with the sun setting in the background.<br>
-                <a href="https://unsplash.com/photos/6c6a1Yj6aJQ" target="_blank">by Sapan Patel on Unsplash</a>
-            </sl-card>
-        </sl-carousel-item>
-        <sl-carousel-item>
-            <sl-card class="card-image">
-                <img
-                    slot="image"
-                    src="../static/images/test.jpg"
-                    alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
-                />
-                A scenic view of a mountain with clouds rolling in.<br>
-                <a href="https://unsplash.com/photos/Yrxr3bsPdS0" target="_blank">by V2osk on Unsplash</a>
+                Ce site.<br>
+                <a href="https://github.com/Farounaga/portfolio2" target="_blank">voir sur GitHub</a>
             </sl-card>
         </sl-carousel-item>
     </sl-carousel>
@@ -62,7 +47,19 @@
 
 <style>
     .card-image {
-        max-width: 300px;
+        
         height: 90%;
     }
 </style>
+
+<script>
+function openFull(img) {
+  if (img.requestFullscreen) {
+    img.requestFullscreen();
+  } else if (img.webkitRequestFullscreen) {       // Safari
+    img.webkitRequestFullscreen();
+  } else if (img.msRequestFullscreen) {             // IE11
+    img.msRequestFullscreen();
+  }
+}
+</script>
